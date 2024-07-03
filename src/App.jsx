@@ -1,23 +1,14 @@
-import React from 'react'
-import './App.css'
-import HelloComponent from './assets/HelloComponent'
-import { Amplify } from 'aws-amplify'
-import awsconfig from './aws-exports'
+import React from 'react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 
-Amplify.configure(awsconfig)
 function App() {
-
   return (
-    <>
-      <HelloComponent></HelloComponent>
-      more edits
-      test upload
-      <br />
-      test another upload
-      <br />
-      should upload
-    </>
-  )
+    <div className="App">
+      <h1>Welcome to My App</h1>
+      {/* Your app's components go here */}
+    </div>
+  );
 }
 
-export default App
+export default withAuthenticator(App);
